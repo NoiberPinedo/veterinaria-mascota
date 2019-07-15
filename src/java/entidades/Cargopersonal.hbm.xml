@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 14/07/2019 08:13:40 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="entidades.Cargopersonal" table="cargopersonal" catalog="mascota" optimistic-lock="version">
+        <id name="idcargo" type="int">
+            <column name="idcargo" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="personal" class="entidades.Personal" fetch="select">
+            <column name="idPersonal" not-null="true" />
+        </many-to-one>
+        <property name="estado" type="string">
+            <column name="estado" length="45" not-null="true" />
+        </property>
+        <property name="descripcion" type="string">
+            <column name="descripcion" length="45" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

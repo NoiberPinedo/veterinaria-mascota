@@ -1,5 +1,5 @@
 package entidades;
-// Generated 24/06/2019 09:52:53 AM by Hibernate Tools 4.3.1
+// Generated 14/07/2019 08:13:39 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -14,34 +14,36 @@ public class Personal  implements java.io.Serializable {
      private int idPersonal;
      private String nombre;
      private String dni;
-     private String telefono;
-     private String cargo;
+     private String telef;
+     private String corgo;
      private String email;
      private String apellido;
      private Set atencions = new HashSet(0);
+     private Set cargopersonals = new HashSet(0);
 
     public Personal() {
     }
 
 	
-    public Personal(int idPersonal, String nombre, String dni, String telefono, String cargo, String email, String apellido) {
+    public Personal(int idPersonal, String nombre, String dni, String telef, String corgo, String email, String apellido) {
         this.idPersonal = idPersonal;
         this.nombre = nombre;
         this.dni = dni;
-        this.telefono = telefono;
-        this.cargo = cargo;
+        this.telef = telef;
+        this.corgo = corgo;
         this.email = email;
         this.apellido = apellido;
     }
-    public Personal(int idPersonal, String nombre, String dni, String telefono, String cargo, String email, String apellido, Set atencions) {
+    public Personal(int idPersonal, String nombre, String dni, String telef, String corgo, String email, String apellido, Set atencions, Set cargopersonals) {
        this.idPersonal = idPersonal;
        this.nombre = nombre;
        this.dni = dni;
-       this.telefono = telefono;
-       this.cargo = cargo;
+       this.telef = telef;
+       this.corgo = corgo;
        this.email = email;
        this.apellido = apellido;
        this.atencions = atencions;
+       this.cargopersonals = cargopersonals;
     }
    
     public int getIdPersonal() {
@@ -65,19 +67,19 @@ public class Personal  implements java.io.Serializable {
     public void setDni(String dni) {
         this.dni = dni;
     }
-    public String getTelefono() {
-        return this.telefono;
+    public String getTelef() {
+        return this.telef;
     }
     
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
+    public void setTelef(String telef) {
+        this.telef = telef;
     }
-    public String getCargo() {
-        return this.cargo;
+    public String getCorgo() {
+        return this.corgo;
     }
     
-    public void setCargo(String cargo) {
-        this.cargo = cargo;
+    public void setCorgo(String corgo) {
+        this.corgo = corgo;
     }
     public String getEmail() {
         return this.email;
@@ -99,6 +101,13 @@ public class Personal  implements java.io.Serializable {
     
     public void setAtencions(Set atencions) {
         this.atencions = atencions;
+    }
+    public Set getCargopersonals() {
+        return this.cargopersonals;
+    }
+    
+    public void setCargopersonals(Set cargopersonals) {
+        this.cargopersonals = cargopersonals;
     }
 
 

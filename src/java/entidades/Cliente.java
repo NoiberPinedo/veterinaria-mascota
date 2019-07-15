@@ -1,5 +1,5 @@
 package entidades;
-// Generated 24/06/2019 09:52:53 AM by Hibernate Tools 4.3.1
+// Generated 14/07/2019 08:13:39 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -12,12 +12,12 @@ import java.util.Set;
 public class Cliente  implements java.io.Serializable {
 
 
-     private int idcliente;
+     private int idCliente;
      private String nombre;
      private String apellido;
-     private Date fechanacimiento;
-     private String direccion;
-     private String telefono;
+     private Date fechaNacim;
+     private String direcion;
+     private String telef;
      private String email;
      private Set mascotaporclientes = new HashSet(0);
 
@@ -25,32 +25,32 @@ public class Cliente  implements java.io.Serializable {
     }
 
 	
-    public Cliente(int idcliente, String nombre, String apellido, Date fechanacimiento, String direccion, String telefono, String email) {
-        this.idcliente = idcliente;
+    public Cliente(int idCliente, String nombre, String apellido, Date fechaNacim, String direcion, String telef, String email) {
+        this.idCliente = idCliente;
         this.nombre = nombre;
         this.apellido = apellido;
-        this.fechanacimiento = fechanacimiento;
-        this.direccion = direccion;
-        this.telefono = telefono;
+        this.fechaNacim = fechaNacim;
+        this.direcion = direcion;
+        this.telef = telef;
         this.email = email;
     }
-    public Cliente(int idcliente, String nombre, String apellido, Date fechanacimiento, String direccion, String telefono, String email, Set mascotaporclientes) {
-       this.idcliente = idcliente;
+    public Cliente(int idCliente, String nombre, String apellido, Date fechaNacim, String direcion, String telef, String email, Set mascotaporclientes) {
+       this.idCliente = idCliente;
        this.nombre = nombre;
        this.apellido = apellido;
-       this.fechanacimiento = fechanacimiento;
-       this.direccion = direccion;
-       this.telefono = telefono;
+       this.fechaNacim = fechaNacim;
+       this.direcion = direcion;
+       this.telef = telef;
        this.email = email;
        this.mascotaporclientes = mascotaporclientes;
     }
    
-    public int getIdcliente() {
-        return this.idcliente;
+    public int getIdCliente() {
+        return this.idCliente;
     }
     
-    public void setIdcliente(int idcliente) {
-        this.idcliente = idcliente;
+    public void setIdCliente(int idCliente) {
+        this.idCliente = idCliente;
     }
     public String getNombre() {
         return this.nombre;
@@ -66,26 +66,26 @@ public class Cliente  implements java.io.Serializable {
     public void setApellido(String apellido) {
         this.apellido = apellido;
     }
-    public Date getFechanacimiento() {
-        return this.fechanacimiento;
+    public Date getFechaNacim() {
+        return this.fechaNacim;
     }
     
-    public void setFechanacimiento(Date fechanacimiento) {
-        this.fechanacimiento = fechanacimiento;
+    public void setFechaNacim(Date fechaNacim) {
+        this.fechaNacim = fechaNacim;
     }
-    public String getDireccion() {
-        return this.direccion;
-    }
-    
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
-    }
-    public String getTelefono() {
-        return this.telefono;
+    public String getDirecion() {
+        return this.direcion;
     }
     
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
+    public void setDirecion(String direcion) {
+        this.direcion = direcion;
+    }
+    public String getTelef() {
+        return this.telef;
+    }
+    
+    public void setTelef(String telef) {
+        this.telef = telef;
     }
     public String getEmail() {
         return this.email;

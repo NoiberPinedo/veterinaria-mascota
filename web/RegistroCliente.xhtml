@@ -22,7 +22,7 @@
                                 </p:column>
                             </f:facet>
                             <p:panelGrid>
-
+                                                                                    
                                 <p:row>
                                     <p:column>
                                         <p:outputLabel value="ID"/>
@@ -53,7 +53,7 @@
                                         <p:outputLabel value="Fecha de Nacimiento"/> 
                                     </p:column>
                                     <p:column>
-                                        <p:calendar value="#{clienteBeans.cliente.fechanacimiento}" locale="es"/>
+                                        <p:calendar value="#{clienteBeans.cliente.fechaNacim}" locale="es"/>
                                     </p:column>
                                 </p:row>
                                 <p:row>
@@ -62,7 +62,7 @@
 
                                     </p:column>
                                     <p:column>
-                                        <p:inputText value="#{clienteBeans.cliente.direccion}"/>
+                                        <p:inputText value="#{clienteBeans.cliente.direcion}"/>
                                     </p:column>
                                 </p:row>
                                 <p:row>
@@ -70,7 +70,7 @@
                                         <p:outputLabel value="Numero de Telefono"/> 
                                     </p:column>
                                     <p:column>
-                                        <p:inputText value="#{clienteBeans.cliente.telefono}"/>
+                                        <p:inputText value="#{clienteBeans.cliente.telef}"/>
                                     </p:column>
                                 </p:row>
                                 <p:row>
@@ -83,15 +83,15 @@
                                 </p:row>
 
                             </p:panelGrid>
-                            <p:commandButton value="Registrar" action="#{clienteBeans.guardarCliente()}" update=":Data:dataTableCliente,:formcliente"/>
+                            <p:commandButton rendered="#{!clienteBeans.banderaSelect}"  value="Guardar" action="#{clienteBeans.guardarCliente()}" update=":Data:dataTableCliente,:formcliente"/>
                             <p:commandButton value="Nuevo" action="#{clienteBeans.limpiar()}" update=":Data:dataTableCliente,:formcliente"/>
-                            <p:commandButton value="Actualizar" action="#{clienteBeans.actualizarCliente()}" update=":Data:dataTableCliente,:formcliente"/>
+                            <p:commandButton rendered="#{clienteBeans.banderaSelect}"  value="Actualizar" action="#{clienteBeans.actualizarCliente()}" update=":Data:dataTableCliente,:formcliente"/>
                         </p:panel>
                     </h:form>
                     
                       <h:form id="Data">
                           <p:dataTable rowKey="#{cliente.idcliente}" selection="#{clienteBeans.cliente}" selectionMode="single" id="dataTableCliente" var="cliente" value="#{clienteBeans.listarCliente()}" style="width: 80%">
-                            <p:ajax event="rowSelect" update=":formcliente"/>
+                            <p:ajax event="rowSelect" update=":formcliente" listener="#{clienteBeans.selectBandera()}"/>
                             <p:column headerText="Código">
                                 <p:outputLabel value="#{cliente.idcliente}"/>
                             </p:column>
@@ -102,13 +102,13 @@
                                 <p:outputLabel value="#{cliente.apellido}"/>
                             </p:column>
                             <p:column headerText="Fecha de Nacimiento">
-                                <p:outputLabel value="#{cliente.fechanacimiento}"/> 
+                                <p:outputLabel value="#{cliente.fechaNacim}"/> 
                             </p:column>
                             <p:column headerText="dirección">
-                                <p:outputLabel value="#{cliente.direccion}"/> 
+                                <p:outputLabel value="#{cliente.direcion}"/> 
                             </p:column>
                             <p:column headerText="Telefono">
-                                <p:outputLabel value="#{cliente.telefono}"/> 
+                                <p:outputLabel value="#{cliente.telef}"/> 
                             </p:column>
                             <p:column headerText="Correo Electronico">
                                 <p:outputLabel value="#{cliente.email}"/> 

@@ -1,5 +1,5 @@
 package entidades;
-// Generated 24/06/2019 09:52:53 AM by Hibernate Tools 4.3.1
+// Generated 14/07/2019 08:13:39 PM by Hibernate Tools 4.3.1
 
 
 
@@ -10,14 +10,14 @@ public class MascotaporclienteId  implements java.io.Serializable {
 
 
      private int mascotaIdMascota;
-     private int clienteIdcliente;
+     private int clienteIdCliente;
 
     public MascotaporclienteId() {
     }
 
-    public MascotaporclienteId(int mascotaIdMascota, int clienteIdcliente) {
+    public MascotaporclienteId(int mascotaIdMascota, int clienteIdCliente) {
        this.mascotaIdMascota = mascotaIdMascota;
-       this.clienteIdcliente = clienteIdcliente;
+       this.clienteIdCliente = clienteIdCliente;
     }
    
     public int getMascotaIdMascota() {
@@ -27,12 +27,12 @@ public class MascotaporclienteId  implements java.io.Serializable {
     public void setMascotaIdMascota(int mascotaIdMascota) {
         this.mascotaIdMascota = mascotaIdMascota;
     }
-    public int getClienteIdcliente() {
-        return this.clienteIdcliente;
+    public int getClienteIdCliente() {
+        return this.clienteIdCliente;
     }
     
-    public void setClienteIdcliente(int clienteIdcliente) {
-        this.clienteIdcliente = clienteIdcliente;
+    public void setClienteIdCliente(int clienteIdCliente) {
+        this.clienteIdCliente = clienteIdCliente;
     }
 
 
@@ -43,14 +43,14 @@ public class MascotaporclienteId  implements java.io.Serializable {
 		 MascotaporclienteId castOther = ( MascotaporclienteId ) other; 
          
 		 return (this.getMascotaIdMascota()==castOther.getMascotaIdMascota())
- && (this.getClienteIdcliente()==castOther.getClienteIdcliente());
+ && (this.getClienteIdCliente()==castOther.getClienteIdCliente());
    }
    
    public int hashCode() {
          int result = 17;
          
          result = 37 * result + this.getMascotaIdMascota();
-         result = 37 * result + this.getClienteIdcliente();
+         result = 37 * result + this.getClienteIdCliente();
          return result;
    }   
 

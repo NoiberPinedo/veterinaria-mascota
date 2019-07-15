@@ -24,6 +24,7 @@ public class ClienteBeans {
 
     //private Date date9;
     private Cliente cliente;
+     private boolean banderaSelect = false;
 
     //constructor
     public ClienteBeans() {
@@ -85,6 +86,7 @@ public class ClienteBeans {
     }
 
     public String limpiar() {
+        banderaSelect=false;
         return "/RegistroCliente.xhtml";
     }
 
@@ -99,4 +101,16 @@ public class ClienteBeans {
 
         return "/RegistroCliente.xhtml";
     }
+    public void selectBandera() {
+        banderaSelect = true;
+    }
+
+    public boolean isBanderaSelect() {
+        return banderaSelect;
+    }
+
+    public void setBanderaSelect(boolean banderaSelect) {
+        this.banderaSelect = banderaSelect;
+    }
+    
 }
