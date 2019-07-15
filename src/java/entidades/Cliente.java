@@ -1,5 +1,5 @@
 package entidades;
-// Generated 24/06/2019 07:58:37 PM by Hibernate Tools 4.3.1
+// Generated 15/07/2019 05:41:19 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -17,7 +17,7 @@ public class Cliente  implements java.io.Serializable {
      private String apellido;
      private Date fechaNacimiento;
      private String direccion;
-     private String telefono;
+     private String numeroTelefonico;
      private String email;
      private Set clientepormascotas = new HashSet(0);
 
@@ -25,22 +25,22 @@ public class Cliente  implements java.io.Serializable {
     }
 
 	
-    public Cliente(int idCliente, String nombre, String apellido, Date fechaNacimiento, String direccion, String telefono, String email) {
+    public Cliente(int idCliente, String nombre, String apellido, Date fechaNacimiento, String direccion, String numeroTelefonico, String email) {
         this.idCliente = idCliente;
         this.nombre = nombre;
         this.apellido = apellido;
         this.fechaNacimiento = fechaNacimiento;
         this.direccion = direccion;
-        this.telefono = telefono;
+        this.numeroTelefonico = numeroTelefonico;
         this.email = email;
     }
-    public Cliente(int idCliente, String nombre, String apellido, Date fechaNacimiento, String direccion, String telefono, String email, Set clientepormascotas) {
+    public Cliente(int idCliente, String nombre, String apellido, Date fechaNacimiento, String direccion, String numeroTelefonico, String email, Set clientepormascotas) {
        this.idCliente = idCliente;
        this.nombre = nombre;
        this.apellido = apellido;
        this.fechaNacimiento = fechaNacimiento;
        this.direccion = direccion;
-       this.telefono = telefono;
+       this.numeroTelefonico = numeroTelefonico;
        this.email = email;
        this.clientepormascotas = clientepormascotas;
     }
@@ -80,12 +80,12 @@ public class Cliente  implements java.io.Serializable {
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
-    public String getTelefono() {
-        return this.telefono;
+    public String getNumeroTelefonico() {
+        return this.numeroTelefonico;
     }
     
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
+    public void setNumeroTelefonico(String numeroTelefonico) {
+        this.numeroTelefonico = numeroTelefonico;
     }
     public String getEmail() {
         return this.email;

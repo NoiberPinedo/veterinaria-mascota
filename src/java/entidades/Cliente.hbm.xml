@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 24/06/2019 07:58:38 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated 15/07/2019 05:41:20 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="entidades.Cliente" table="cliente" catalog="mascota" optimistic-lock="version">
         <id name="idCliente" type="int">
@@ -20,8 +20,8 @@
         <property name="direccion" type="string">
             <column name="direccion" length="45" not-null="true" />
         </property>
-        <property name="telefono" type="string">
-            <column name="telefono" length="9" not-null="true" />
+        <property name="numeroTelefonico" type="string">
+            <column name="numeroTelefonico" length="9" not-null="true" />
         </property>
         <property name="email" type="string">
             <column name="email" length="45" not-null="true" />
