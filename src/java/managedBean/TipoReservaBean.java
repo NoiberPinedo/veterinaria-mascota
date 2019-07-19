@@ -5,8 +5,8 @@
  */
 package managedBean;
 
-import dao.TipoatencionDao;
-import entidades.Tipoatencion;
+import dao.TiporeservaDao;
+import entidades.Tiporeserva;
 import java.io.Serializable;
 import java.util.ArrayList;
 import javax.faces.application.FacesMessage;
@@ -21,22 +21,22 @@ import org.hibernate.HibernateException;
  */
 @ManagedBean
 @ViewScoped
-public class TipoAtencionBean implements Serializable{
+public class TipoReservaBean implements Serializable{
     
-    private Tipoatencion tipoatencion;
+    private Tiporeserva tiporeserva;
    private boolean banderaSelect=false;
    
-    public TipoAtencionBean() {
-        this.tipoatencion = new Tipoatencion();
+    public TipoReservaBean() {
+        this.tiporeserva = new Tiporeserva();
     }
 
    
 
-    public String guardarTipoAtencion() {
+    public String guardarTipoReserva() {
         try {
 
-            TipoatencionDao tipoatencionDao = new TipoatencionDao();
-            boolean respuesta = tipoatencionDao.guardarTipoatencion(tipoatencion);
+            TiporeservaDao tiporeservaDao = new TiporeservaDao();
+            boolean respuesta = tiporeservaDao.guardarTiporeserva(tiporeserva);
             if (respuesta) {
                 FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Se registro con éxito"));
             } else {
@@ -46,13 +46,13 @@ public class TipoAtencionBean implements Serializable{
             ///transation.rollback();  -- regresa a la anterior
             System.out.println("Error::: " + e);
         }
-        return "/RegistroTipoAtencion";
+        return "/RegistroTipoReserva";
     }
 
-    public String actualizarTipoAtencion() {
+    public String actualizarTipoReserva() {
         try {
-            TipoatencionDao tipoatencionDao = new TipoatencionDao();
-            boolean respuesta = tipoatencionDao.actualizarTipoatencion(tipoatencion);
+            TiporeservaDao tiporeservaDao = new TiporeservaDao();
+            boolean respuesta = tiporeservaDao.actualizarTiporeserva(tiporeserva);
             if (respuesta) {
                 FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Se actualizo con exito"));
             } else {
@@ -62,30 +62,30 @@ public class TipoAtencionBean implements Serializable{
             ///transation.rollback();  -- regresa a la anterior
             System.out.println("Error::: " + e);
         }
-        return "/RegistroTipoAtencion";
+        return "/RegistroTipoReserva";
 
     }
 
-    public ArrayList<Tipoatencion> listarTipoAtencions() {
-        ArrayList<Tipoatencion> lista = new ArrayList<>();
-        TipoatencionDao tipoatencionDao = new TipoatencionDao();
-        lista = tipoatencionDao.listarTipoatencion();
+    public ArrayList<Tiporeserva> listarTipoReserva() {
+        ArrayList<Tiporeserva> lista = new ArrayList<>();
+        TiporeservaDao tiporeservaDao = new TiporeservaDao();
+        lista = tiporeservaDao.listarTiporeserva();
         return lista;
     }
 
     public String eliminar() {
-        TipoatencionDao tipoatencionDao = new TipoatencionDao();
-        boolean respuesta = tipoatencionDao.eliminarTipoatencion(tipoatencion);
+        TiporeservaDao tiporeservaDao = new TiporeservaDao();
+        boolean respuesta = tiporeservaDao.eliminarTiporeserva(tiporeserva);
         if (respuesta) {
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Se elimino con exito"));
         } else {
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("No se puedo eliminar"));
         }
-        return "/RegistroTipoAtencion";
+        return "/RegistroTipoReserva";
     }
     public String limpiar() {
         banderaSelect=false;
-        return "/RegistroTipoAtencion";
+        return "/RegistroTipoReserva";
     }
    public void selectBandera(){
     banderaSelect=true;
@@ -99,11 +99,11 @@ public class TipoAtencionBean implements Serializable{
         this.banderaSelect = banderaSelect;
     }
 
-    public Tipoatencion getTipoatencion() {
-        return tipoatencion;
+    public Tiporeserva getTiporeserva() {
+        return tiporeserva;
     }
 
-    public void setTipoatencion(Tipoatencion tipoatencion) {
-        this.tipoatencion = tipoatencion;
+    public void setTiporeserva(Tiporeserva tiporeserva) {
+        this.tiporeserva = tiporeserva;
     }
 }

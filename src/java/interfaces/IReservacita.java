@@ -5,18 +5,18 @@
  */
 package interfaces;
 
-import entidades.Tipoatencion;
+import entidades.Reservacita;
 import java.util.ArrayList;
 
 /**
  *
  * @author USUARIO
  */
-public interface ITipoAtencion {
-      public abstract boolean guardarTipoAtencion(Tipoatencion tipoatencion);
-    public abstract ArrayList<Tipoatencion> listarTipoatencion();
-    public abstract boolean actualizarTipoAtencion(Tipoatencion tipoatencion);
-    public abstract boolean eliminarTipoAtencion(Tipoatencion tipoatencion);
+public interface IReservacita {
+      public abstract boolean guardarReservacita(Reservacita reservacita);
+    public abstract ArrayList<Reservacita> listarReservacitas();
+    public abstract boolean actualizarReservacita(Reservacita reservacita);
+    public abstract boolean eliminarReservacita(Reservacita reservacita);
 }
 
 

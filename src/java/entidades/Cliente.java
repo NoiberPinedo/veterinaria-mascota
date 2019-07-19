@@ -1,5 +1,5 @@
 package entidades;
-// Generated 15/07/2019 05:41:19 PM by Hibernate Tools 4.3.1
+// Generated 19/07/2019 08:48:56 AM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -19,6 +19,8 @@ public class Cliente  implements java.io.Serializable {
      private String direccion;
      private String numeroTelefonico;
      private String email;
+     private Set usuarios = new HashSet(0);
+     private Set reservacitas = new HashSet(0);
      private Set clientepormascotas = new HashSet(0);
 
     public Cliente() {
@@ -34,7 +36,7 @@ public class Cliente  implements java.io.Serializable {
         this.numeroTelefonico = numeroTelefonico;
         this.email = email;
     }
-    public Cliente(int idCliente, String nombre, String apellido, Date fechaNacimiento, String direccion, String numeroTelefonico, String email, Set clientepormascotas) {
+    public Cliente(int idCliente, String nombre, String apellido, Date fechaNacimiento, String direccion, String numeroTelefonico, String email, Set usuarios, Set reservacitas, Set clientepormascotas) {
        this.idCliente = idCliente;
        this.nombre = nombre;
        this.apellido = apellido;
@@ -42,6 +44,8 @@ public class Cliente  implements java.io.Serializable {
        this.direccion = direccion;
        this.numeroTelefonico = numeroTelefonico;
        this.email = email;
+       this.usuarios = usuarios;
+       this.reservacitas = reservacitas;
        this.clientepormascotas = clientepormascotas;
     }
    
@@ -93,6 +97,20 @@ public class Cliente  implements java.io.Serializable {
     
     public void setEmail(String email) {
         this.email = email;
+    }
+    public Set getUsuarios() {
+        return this.usuarios;
+    }
+    
+    public void setUsuarios(Set usuarios) {
+        this.usuarios = usuarios;
+    }
+    public Set getReservacitas() {
+        return this.reservacitas;
+    }
+    
+    public void setReservacitas(Set reservacitas) {
+        this.reservacitas = reservacitas;
     }
     public Set getClientepormascotas() {
         return this.clientepormascotas;

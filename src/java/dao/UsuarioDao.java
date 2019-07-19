@@ -1,7 +1,7 @@
 package dao;
 
-import entidades.Tipoatencion;
-import interfaces.ITipoAtencion;
+import entidades.Usuario;
+import interfaces.IUsuario;
 import java.util.ArrayList;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -12,11 +12,11 @@ import utilitarios.HibernateUtil;
  *
  * @author USUARIO
  */
-public class TipoAtencionDao implements ITipoAtencion {
+public class UsuarioDao implements IUsuario {
 
     //funcion para guardar
     @Override
-    public boolean guardarTipoAtencion(Tipoatencion tipoatencion) {
+    public boolean guardarUsuario(Usuario usuario) {
         Session session = null;
         boolean respuesta = true;
         try {
@@ -24,7 +24,7 @@ public class TipoAtencionDao implements ITipoAtencion {
             session = HibernateUtil.getSessionFactory().openSession();
             Transaction transaccion = session.beginTransaction(); //inicia
             //registra en la base de datos
-            session.save(tipoatencion);
+            session.save(usuario);
             transaccion.commit();
         } catch (Exception e) {
             System.out.println("Error al guardar. " + e);
@@ -37,15 +37,38 @@ public class TipoAtencionDao implements ITipoAtencion {
         return respuesta;
     }
 
+    //funcion para listar
     @Override
-    public boolean actualizarTipoAtencion(Tipoatencion tipoatencion) {
+    public ArrayList<Usuario> listarUsuarios() {
+        Session session = null;
+        ArrayList<Usuario> lista = new ArrayList<>();
+        try {
+            session = HibernateUtil.getSessionFactory().openSession();
+            //consulta hacia la base de datos
+            String hql = "FROM Usuario";
+            Query query = session.createQuery(hql);
+            //ejecuta la consulta y obtener la lista. array: castea
+            lista = (ArrayList<Usuario>) query.list();
+        } catch (Exception e) {
+            System.out.println("ERROR EN LISTAR::" + e);
+        } finally {
+            if (session != null) {
+                session.close();
+            }
+        }
+
+        return lista;
+    }
+
+    @Override
+    public boolean actualizarUsuario(Usuario usuario) {
      
         boolean resp = true;
         Session session = null;
         try {
             session = HibernateUtil.getSessionFactory().openSession();
             Transaction transaccion = session.beginTransaction();
-            session.update(tipoatencion);
+            session.update(usuario);
             transaccion.commit();
         } catch (Exception e) {
             resp = false;
@@ -59,13 +82,13 @@ public class TipoAtencionDao implements ITipoAtencion {
     }
 
     @Override
-    public boolean eliminarTipoAtencion(Tipoatencion tipoatencion) {
+    public boolean eliminarUsuario(Usuario usuario) {
         Session sesion = null;
         boolean resp = true;
         try {
             sesion = HibernateUtil.getSessionFactory().openSession();
             sesion.beginTransaction();
-            sesion.delete(tipoatencion);
+            sesion.delete(usuario);
             sesion.getTransaction().commit();
         } catch (Exception e) {
             System.out.println("ERROR DAO::" + e);
@@ -78,28 +101,6 @@ public class TipoAtencionDao implements ITipoAtencion {
         }
 
         return resp;
-    }
-
-    @Override
-    public ArrayList<Tipoatencion> listarTipoatencion() {
-            Session session = null;
-        ArrayList<Tipoatencion> lista = new ArrayList<>();
-        try {
-            session = HibernateUtil.getSessionFactory().openSession();
-            //consulta hacia la base de datos
-            String hql = "FROM TipoAtencion";
-            Query query = session.createQuery(hql);
-            //ejecuta la consulta y obtener la lista. array: castea
-            lista = (ArrayList<Tipoatencion>) query.list();
-        } catch (Exception e) {
-            System.out.println("ERROR EN LISTAR::" + e);
-        } finally {
-            if (session != null) {
-                session.close();
-            }
-        }
-
-        return lista;
     }
 
 }

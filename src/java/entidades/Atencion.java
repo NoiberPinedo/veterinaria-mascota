@@ -1,5 +1,5 @@
 package entidades;
-// Generated 15/07/2019 05:41:19 PM by Hibernate Tools 4.3.1
+// Generated 19/07/2019 08:48:56 AM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -13,6 +13,7 @@ public class Atencion  implements java.io.Serializable {
      private Integer idAtencion;
      private Clientepormascota clientepormascota;
      private Personal personal;
+     private Tipoatencion tipoatencion;
      private Date fechaAtencion;
      private String diagnostico;
      private Date horaAtencion;
@@ -20,9 +21,10 @@ public class Atencion  implements java.io.Serializable {
     public Atencion() {
     }
 
-    public Atencion(Clientepormascota clientepormascota, Personal personal, Date fechaAtencion, String diagnostico, Date horaAtencion) {
+    public Atencion(Clientepormascota clientepormascota, Personal personal, Tipoatencion tipoatencion, Date fechaAtencion, String diagnostico, Date horaAtencion) {
        this.clientepormascota = clientepormascota;
        this.personal = personal;
+       this.tipoatencion = tipoatencion;
        this.fechaAtencion = fechaAtencion;
        this.diagnostico = diagnostico;
        this.horaAtencion = horaAtencion;
@@ -48,6 +50,13 @@ public class Atencion  implements java.io.Serializable {
     
     public void setPersonal(Personal personal) {
         this.personal = personal;
+    }
+    public Tipoatencion getTipoatencion() {
+        return this.tipoatencion;
+    }
+    
+    public void setTipoatencion(Tipoatencion tipoatencion) {
+        this.tipoatencion = tipoatencion;
     }
     public Date getFechaAtencion() {
         return this.fechaAtencion;
